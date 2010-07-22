@@ -9,6 +9,6 @@ require 'nokogiri'
 $LOAD_PATH.push(File.dirname(__FILE__))
 require 'app/controllers/home_controller'
 require 'app/models/smoke_dates'
-
+require 'app/models/load_dates'
 
 #set :public, File.dirname(__FILE__) + '/static'

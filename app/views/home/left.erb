@@ -7,10 +7,10 @@
   <ul>
     <li><a href ="http://testing.gipoo.net/htcheck" target="mainFrame">Crawler</a></li>
     <li>
-      <a href="http://testing.gipoo.net/html/unittest/<%= @smoke.first.strftime("%d-%m-%Y") %>" target="mainFrame">Tests <%= @smoke.first %></a> (<a href="javascript:;" target="mainFrame" id="smoke_tests">+</a>)
+      <a href="http://testing.gipoo.net/html/unittest/<%= @smoke.first.strftime("%d-%m-%Y") %>" target="mainFrame">Tests <%= @smoke.first.strftime("%d-%m-%Y") %></a> (<a href="javascript:;" target="mainFrame" id="smoke_tests">+</a>)
       <ul id="smoke_container" style="display: none">
         <% @smoke.each do |date| %>
-          <li><a href="http://testing.gipoo.net/html/unittest/<%= date.strftime("%d-%m-%Y") %>" target="mainFrame"><%= date %></a></li>
+          <li><a href="http://testing.gipoo.net/html/unittest/<%= date.strftime("%d-%m-%Y") %>" target="mainFrame"><%= date.strftime("%d-%m-%Y") %></a></li>
         <% end %>
       </ul>
     </li>
@@ -21,7 +21,22 @@
       })
     </script>
 
-    <li><a href ="http://testing.gipoo.net/html/loadtests" target="mainFrame">Load Tests</a></li>
-    <li><a href ="http://stuff.gipoo.net:3333" target="mainFrame">Cruise Control RB</a></li>
+    <li><a href ="http://testing.gipoo.net/html/loadtests/<%= @load.first.strftime("%d-%m-%Y") %>"  target="mainFrame">Load Tests <%= @load.first.strftime("%d-%m-%Y") %></a> (<a href="javascript:;" target="mainFrame" id="load_tests">+</a>)
+      <ul id="load_container" style="display: none">
+       <% @load.each do |date| %>
+          <li><a href="http://testing.gipoo.net/html/loadtests/<%= date.strftime("%d-%m-%Y") %>/MainPage.html" target="mainFrame"><%= date.strftime("%d-%m-%Y") %></a></li>
+       <% end %>
+      </ul>
+    </li>
+    
+    <script type="text/javascript">
+      $('#load_tests').click(function(){
+        $('#load_container').toggle('slow');
+      })
+    </script>
+ 
+
+
+    <li><a href ="http://cruise.gipoo.net" target="mainFrame">Cruise Control RB</a></li>
   </ul>
 </body>

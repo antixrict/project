@@ -6,6 +6,7 @@ end
 
 get '/left' do  
   @smoke = SmokeDates.retrieve.collect{|d| Date.parse(d)}.sort.reverse
+  @load = LoadDates.retrieve.collect{|d| Date.parse(d)}.sort.reverse
   erb :left
 end
 
