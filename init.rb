@@ -1,12 +1,14 @@
 require 'rubygems'
 require 'erb'
 require 'sinatra'
-#require 'aws/s3'
 require 'yaml'
 require 'open-uri'
+require 'nokogiri'
 
 
 $LOAD_PATH.push(File.dirname(__FILE__))
-require 'app/controllers/home_controller.rb'
-#require 'config/environment'
-#set :views, File.dirname(__FILE__) + '/app/views'
+require 'app/controllers/home_controller'
+require 'app/models/smoke_dates'
+
+
+#set :public, File.dirname(__FILE__) + '/static'

@@ -1,7 +1,27 @@
-<body>
-<a href ="http://testing.gipoo.net/htcheck" target ="mainFrame">Crawler</a><br>
-<a href ="http://testing.gipoo.net/html" target ="mainFrame">Tests</a><br>
-<a href ="http://testing.gipoo.net/html/loadtests" target ="mainFrame">Load Tests</a><br>
-<a href ="http://stuff.gipoo.net:3333" target ="mainFrame">Cruise Control RB</a><br>
+<head>
+  <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
+</head>
 
+<body>
+  <ul>
+    <li><a href ="http://testing.gipoo.net/htcheck" target="mainFrame">Crawler</a></li>
+    <li>
+      <a href="http://testing.gipoo.net/html/unittest/<%= @smoke.first.strftime("%d-%m-%Y") %>" target="mainFrame">Tests <%= @smoke.first %></a> (<a href="javascript:;" target="mainFrame" id="smoke_tests">+</a>)
+      <ul id="smoke_container" style="display: none">
+        <% @smoke.each do |date| %>
+          <li><a href="http://testing.gipoo.net/html/unittest/<%= date.strftime("%d-%m-%Y") %>" target="mainFrame"><%= date %></a></li>
+        <% end %>
+      </ul>
+    </li>
+
+    <script type="text/javascript">
+      $('#smoke_tests').click(function(){
+        $('#smoke_container').toggle('slow');
+      })
+    </script>
+
+    <li><a href ="http://testing.gipoo.net/html/loadtests" target="mainFrame">Load Tests</a></li>
+    <li><a href ="http://stuff.gipoo.net:3333" target="mainFrame">Cruise Control RB</a></li>
+  </ul>
 </body>
