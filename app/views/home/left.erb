@@ -7,7 +7,7 @@
   <ul>
     <li><a href ="http://testing.gipoo.net/htcheck" target="mainFrame">Crawler</a></li>
     <li>
-      <a href="http://testing.gipoo.net/html/unittest/<%= @smoke.first.strftime("%d-%m-%Y") %>" target="mainFrame">Tests <%= @smoke.first.strftime("%d-%m-%Y") %></a> (<a href="javascript:;" target="mainFrame" id="smoke_tests">+</a>)
+      <a href="http://testing.gipoo.net/html/unittest/<%= @smoke.first.strftime("%d-%m-%Y") %>" target="mainFrame">Smoke Tests <%= @smoke.first.strftime("%d-%m-%Y") %></a> (<a href="javascript:;" target="mainFrame" id="smoke_tests">+</a>)
       <ul id="smoke_container" style="display: none">
         <% @smoke.each do |date| %>
           <li><a href="http://testing.gipoo.net/html/unittest/<%= date.strftime("%d-%m-%Y") %>" target="mainFrame"><%= date.strftime("%d-%m-%Y") %></a></li>
@@ -37,6 +37,8 @@
  
 
 
-    <li><a href ="http://cruise.gipoo.net" target="mainFrame">Cruise Control RB</a></li>
+    <li><a href ="http://testing.gipoo.net:8090/job/555_bg" target="mainFrame">Unit Tests 555.bg</a></li>
+    <li><a href ="http://testing.gipoo.net:8090/job/askfm" target="mainFrame">Cucumber tests AskFM</a></li>
+
   </ul>
 </body>
