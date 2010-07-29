@@ -2,7 +2,7 @@ class SmokeDates
 
   def self.retrieve
     doc = Nokogiri::HTML(open("http://testing.gipoo.net/html/unittest/",
-        :http_basic_authentication => ["pinkis", "pinkis"]))
+        :http_basic_authentication => ["xxx", "xxx"]))
 
     dates = []
     doc.xpath('//table/tr/td/a').each do |link|
